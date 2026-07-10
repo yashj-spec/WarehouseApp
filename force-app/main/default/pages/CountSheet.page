@@ -1,0 +1,39 @@
+<apex:page standardController="Merchandise__c"
+    recordSetVar="products"
+    standardStylesheets="false"
+    showHeader="false"
+    sidebar="false">
+
+    <apex:stylesheet value="{!URLFOR($Resource.styles,'styles.css')}" />
+
+    <h1>Inventory Count Sheet</h1>
+
+    <apex:form >
+
+        <apex:pageBlock >
+
+            <apex:pageBlockTable value="{!products}"
+                var="p">
+
+                <apex:column value="{!p.Name}" />
+
+                <apex:column value="{!p.Description__c}" />
+
+                <apex:column value="{!p.Price__c}" />
+
+                <apex:column >
+
+                    <apex:inputField value="{!p.Total_Inventory__c}" />
+
+                </apex:column>
+
+            </apex:pageBlockTable>
+
+            <apex:commandButton action="{!quicksave}"
+                value="Save Inventory"/>
+
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>
