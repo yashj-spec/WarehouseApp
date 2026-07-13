@@ -1,4 +1,4 @@
-public class ContactDuplicateService {
+public class DuplicateContactService {
 
     // it is static (compiled only once)
     // reused for every match instead of recompiling per call

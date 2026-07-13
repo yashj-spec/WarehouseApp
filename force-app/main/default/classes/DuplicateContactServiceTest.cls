@@ -1,5 +1,5 @@
 @isTest
-private class ContactDuplicateServiceTest {
+private class DuplicateContactServiceTest {
 
     // Scenario 1 : Single new Contact, no existing match at all.
     // Nothing should be renamed - name stays exactly as entered.
