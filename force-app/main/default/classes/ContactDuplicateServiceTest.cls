@@ -266,6 +266,27 @@ private class ContactDuplicateServiceTest {
             'Unique Adler record should be completely unaffected');
     }
 
+    // Scenario 10: test for case-insensitive insertions
+
+    @isTest
+    static void testCaseInsensitiveMatching_TreatsDifferentCasingAsSameName() {
+        Contact original = new Contact(FirstName = 'Yash', LastName = 'Patel');
+        insert original;
+
+        Test.startTest();
+        Contact newOne = new Contact(FirstName = 'YAsh', LastName = 'PATEL');
+        insert newOne;
+        Test.stopTest();
+
+        Contact oldReloaded = [SELECT LastName FROM Contact WHERE Id = :original.Id];
+        Contact newReloaded = [SELECT LastName FROM Contact WHERE Id = :newOne.Id];
+
+        System.assertEquals('Patel_1', oldReloaded.LastName,
+            'Existing "Yash Patel" should be detected as a duplicate of "YAsh PATEL" and renamed');
+        System.assertEquals('PATEL', newReloaded.LastName,
+            'New Contact should keep its original casing since it is unsuffixed');
+    }
+
     // small helper used only by the bulk cross-group test above
     private static Integer countUnsuffixed(List<Contact> contacts, String baseName) {
         Integer count = 0;

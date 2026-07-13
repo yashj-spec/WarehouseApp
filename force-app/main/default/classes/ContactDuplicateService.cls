@@ -15,7 +15,7 @@ public class ContactDuplicateService {
             String firstName = contact.FirstName == null ? '' : contact.FirstName.trim();
             String lastName = contact.LastName == null ? '' : contact.LastName.trim();
 
-            String key = firstName + '|' + lastName;
+            String key = buildKey(firstName, lastName);
 
             if (!incomingByKey.containsKey(key)) {
                 incomingByKey.put(key, new List<Contact>());
@@ -62,7 +62,7 @@ public class ContactDuplicateService {
 
             String baseLastName = getBaseLastName(contact.LastName == null ? '' : contact.LastName.trim());
 
-            String key = firstName + '|' + baseLastName;
+            String key = buildKey(firstName, baseLastName);
 
             if (!incomingByKey.containsKey(key)) {
                 continue;
@@ -153,5 +153,13 @@ public class ContactDuplicateService {
 
         Matcher match = SUFFIX_PATTERN.matcher(lastName);
         return match.matches() ? Integer.valueOf(match.group(2)) : null;
+    }
+
+    // Builds a case-insensitive grouping key so "Yash Patel" and "YASH PATEL"
+    // (or any mix of casing) are treated as the same person.
+    private static String buildKey(String firstName, String lastName) {
+        String fn = firstName == null ? '' : firstName.trim().toLowerCase();
+        String ln = lastName == null ? '' : lastName.trim().toLowerCase();
+        return fn + '|' + ln;
     }
 }
