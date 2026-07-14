@@ -20,7 +20,7 @@ sf org display
 sf org open
 
 # Retrieve latest metadata
-sf project retrieve start
+sf project retrieve start --manifest manifest/package.xml
 
 # Deploy all changes
 sf project deploy start
