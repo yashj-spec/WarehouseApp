@@ -7,4 +7,5 @@
     <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <tabs>standard-Chatter</tabs>
     <tabs>Merchandise__c</tabs>
+    <tabs>Invoice__c</tabs>
 </CustomApplication>

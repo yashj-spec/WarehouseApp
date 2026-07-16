@@ -19,9 +19,13 @@
     <tabs>standard-Problem</tabs>
     <tabs>standard-ChangeRequest</tabs>
     <tabs>Merchandise__c</tabs>
+    <tabs>Invoice__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>Invoice__c</tab>
+        </mappings>
         <mappings>
             <tab>Merchandise__c</tab>
         </mappings>

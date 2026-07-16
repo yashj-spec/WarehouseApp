@@ -16,6 +16,7 @@
     <tabs>standard-ActionHub</tabs>
     <tabs>standard-FlowLogs</tabs>
     <tabs>Merchandise__c</tabs>
+    <tabs>Invoice__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>FlowsApp_UtilityBar</utilityBar>
 </CustomApplication>

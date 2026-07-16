@@ -11,4 +11,5 @@
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <tabs>Merchandise__c</tabs>
+    <tabs>Invoice__c</tabs>
 </CustomApplication>

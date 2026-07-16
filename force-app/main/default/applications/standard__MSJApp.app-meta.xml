@@ -11,8 +11,12 @@
     <tabs>standard-SalesforceJourney</tabs>
     <tabs>standard-JourneyMap</tabs>
     <tabs>Merchandise__c</tabs>
+    <tabs>Invoice__c</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
+        <mappings>
+            <tab>Invoice__c</tab>
+        </mappings>
         <mappings>
             <tab>Merchandise__c</tab>
         </mappings>

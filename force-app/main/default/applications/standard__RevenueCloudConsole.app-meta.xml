@@ -10,9 +10,13 @@
     <tabs>standard-Product2</tabs>
     <tabs>standard-Pricebook2</tabs>
     <tabs>Merchandise__c</tabs>
+    <tabs>Invoice__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>RevenueCloudConsole_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>Invoice__c</tab>
+        </mappings>
         <mappings>
             <tab>Merchandise__c</tab>
         </mappings>

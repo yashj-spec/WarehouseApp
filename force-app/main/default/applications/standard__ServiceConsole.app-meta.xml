@@ -182,7 +182,11 @@
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
     <tabs>Merchandise__c</tabs>
+    <tabs>Invoice__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>Invoice__c</tab>
+        </mappings>
         <mappings>
             <tab>Merchandise__c</tab>
         </mappings>
